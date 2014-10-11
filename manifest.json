@@ -1,0 +1,44 @@
+{
+	"manifest_version": 2,
+	"name": "Rail Nation Game Helper",
+	"description": "Rail Nation Game Helper",
+	"version": "0.1",
+    "author": "Timur Ignatiev (gamedev43@gmail.com)",
+	"options_page": "html/options.html",
+    "content_scripts": [{
+        "matches": [ "http://*.railnation.ru/*" ],
+        "css": [
+            "css/style.css"
+        ],
+        "js": [
+            "libs/jquery/jquery-2.1.1.min.js",
+            "libs/tools.js",
+            "libs/md5.js",
+            "js/background.js"
+        ]
+    }],
+    "web_accessible_resources": [
+        "views/*"
+    ],
+	"icons": {
+		"16": "images/icons/16x16.png",
+		"32": "images/icons/32x32.png",
+		"48": "images/icons/48x48.png",
+		"64": "images/icons/64x64.png",
+		"128": "images/icons/128x128.png"
+	},
+	"permissions": [
+        "tabs",
+        "webRequest",
+        "webRequestBlocking",
+        "webNavigation",
+        "management",
+        "http://*/*",
+        "https://*/*"
+	],
+	"browser_action": {
+		"default_title": "Rail Nation",
+		"default_icon": "images/icons/48x48.png",
+		"default_popup": "html/popup.html"
+	}
+}
